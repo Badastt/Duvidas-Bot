@@ -4,8 +4,11 @@ const Discord = require('discord.js');
 var ping = async (channel, onlyShowNotified = false) => {
     await db.makeQuery(`SELECT id, ra, nome, contato, titulo FROM tb_duvidas WHERE status = 0 ${onlyShowNotified ? 'AND notified = false' : ''}`)
     .then(async (result) => {
-        if (result.rowCount == 0)
+        if (result.rowCount == 0) {
+            if (!onlyShowNotified)
+                channel.send("Não há dúvidas não respondidas no momento.");
             return;
+        }
 
         let embed = new Discord.MessageEmbed()
         .setColor(0x1d51cc)
