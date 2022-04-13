@@ -38,3 +38,4 @@ const textBreak = (text, max_size) => {
 
 // Exports
 module.exports.messageBreak = messageBreak;
+module.exports.textBreak = textBreak;
