@@ -27,11 +27,11 @@ module.exports = {
             .addField("Data", `${row.date}`, true)
             .addField("Titulo", row.titulo, false);
 
-            if (row.duvida.length > 600) {
+            if (row.duvida.length > 1400) {
                 embed = embed.addField("Duvida", "Longa demais, printando: ", false);
                 msg.reply({embeds: [embed]});
 
-                let msgs = textBreak(row.duvida, 600);
+                let msgs = textBreak(row.duvida, 1400);
                 msgs.forEach(element => {
                     msg.reply(element);
                 });
