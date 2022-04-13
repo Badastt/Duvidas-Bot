@@ -1,3 +1,5 @@
+const { max } = require("pg/lib/defaults");
+
 const messageBreak = (lines, error_msg) => {
     let messages = [];
 
@@ -18,6 +20,19 @@ const messageBreak = (lines, error_msg) => {
             messages.push(lines.slice(j, lines.length).join("\n"));
     }
 
+    return messages;
+}
+
+const textBreak = (text, max_size) => {
+    let messages = [];
+
+    let j = 0, size = text.length;
+    while (size > 0) {
+        messages.push(text.slice(0, max_size));
+        text = text.slice(max_size, text.length);
+        size -= max_size;
+    }
+    
     return messages;
 }
 

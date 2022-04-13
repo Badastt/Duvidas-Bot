@@ -1,6 +1,7 @@
 const db = require('../external/database.js');
 const errors = require('../data/errors.js');
 const Discord = require('discord.js');
+const {textBreak} = require('../utils/messageBreak');
 
 // Exports
 module.exports = {
@@ -24,10 +25,21 @@ module.exports = {
             .addField("Nome", row.nome, true)
             .addField("Contato", row.contato, true)
             .addField("Data", `${row.date}`, true)
-            .addField("Titulo", row.titulo, false)
-            .addField("Duvida", row.duvida, false);
+            .addField("Titulo", row.titulo, false);
 
-            msg.reply({embeds: [embed]});
+            if (row.duvida.length > 600) {
+                embed = embed.addField("Duvida", "Longa demais, printando: ", false);
+                msg.reply({embeds: [embed]});
+
+                let msgs = textBreak(row.duvida, 600);
+                msgs.forEach(element => {
+                    msg.reply(element);
+                });
+            }
+            else {
+                embed = embed.addField("Duvida", row.duvida, false);
+                msg.reply({embeds: [embed]});
+            }
         });
     }, 
     permission:  async (msg) => true
