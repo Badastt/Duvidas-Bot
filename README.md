@@ -14,10 +14,16 @@ Bot de Discord para servir de interface entre os monitores e o banco de dados do
 8. Faça um clone do seu fork. Faremos algumas modificações nele.
 9. Dentro da pasta data, no arquivo config.js, mude as configurações para os dados que você salvou (Token, Host, Database, User e Password).
 10. Faça push nas modificações.
-11. Volte para o dashboard do Heroku e crie um novo app.
-12. Configure a seção de deploy para utilizar seu fork deste repositório.
-13. Dê deploy.
-14. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
-15. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
+11. Abra o servidor do Discord em que planeja adicionar seu bot.
+12. Escolha um canal onde os integrantes poderão interagir com o bot. Clique com botão direito e selecione para copiar o ID do canal.
+13. Salve esse ID.
+14. Abra o Postgres no banco de dados do site. Precisaremos adicionar uma nova tabela.
+15. Digite o comando de SQL: "CREATE TABLE botchannel (channel text);"
+16. Digite o comando de SQL: "INSERT INTO botchannel VALUES ('ID DO CANAL QUE VC QUER COLOCAR O BOT AQUI')"
+17. Volte para o dashboard do Heroku e crie um novo app.
+18. Configure a seção de deploy para utilizar seu fork deste repositório.
+19. Dê deploy.
+20. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
+21. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
 
 PS: Talvez você tenha que mudar as permissões do bot ao adicioná-lo para que ele funcione. Preste atenção nas instruções do passo 15.
