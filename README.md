@@ -17,13 +17,14 @@ Bot de Discord para servir de interface entre os monitores e o banco de dados do
 11. Abra o servidor do Discord em que planeja adicionar seu bot.
 12. Escolha um canal onde os integrantes poderão interagir com o bot. Clique com botão direito e selecione para copiar o ID do canal.
 13. Salve esse ID.
-14. Abra o Postgres no banco de dados do site. Precisaremos adicionar uma nova tabela.
-15. Digite o comando de SQL: "CREATE TABLE botchannel (channel text);"
-16. Digite o comando de SQL: "INSERT INTO botchannel VALUES ('ID DO CANAL QUE VC QUER COLOCAR O BOT AQUI')"
-17. Volte para o dashboard do Heroku e crie um novo app.
-18. Configure a seção de deploy para utilizar seu fork deste repositório.
-19. Dê deploy.
-20. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
-21. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
+14. Abra o Postgres no banco de dados do site. Precisaremos adicionar uma nova tabela e alterar uma existente.
+16. Digite o comando de SQL: "ALTER TABLE tb_duvidas ADD COLUMN notified bool;"
+17. Digite o comando de SQL: "CREATE TABLE botchannel (channel text);"
+18. Digite o comando de SQL: "INSERT INTO botchannel VALUES ('ID DO CANAL QUE VC QUER COLOCAR O BOT AQUI')"
+19. Volte para o dashboard do Heroku e crie um novo app.
+20. Configure a seção de deploy para utilizar seu fork deste repositório.
+21. Dê deploy.
+22. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
+23. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
 
 PS: Talvez você tenha que mudar as permissões do bot ao adicioná-lo para que ele funcione. Preste atenção nas instruções do passo 15.
