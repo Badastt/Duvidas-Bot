@@ -23,8 +23,9 @@ Bot de Discord para servir de interface entre os monitores e o banco de dados do
 18. Digite o comando de SQL: "INSERT INTO botchannel VALUES ('ID DO CANAL QUE VC QUER COLOCAR O BOT AQUI')"
 19. Volte para o dashboard do Heroku e crie um novo app.
 20. Configure a seção de deploy para utilizar seu fork deste repositório.
-21. Dê deploy.
-22. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
-23. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
+21. Na seção de Resources, dê untoggle em Web e toggle em Worker.
+22. Dê deploy.
+23. Pronto! Seu bot deve estar configurado, e em instantes, deve ficar de pé.
+24. Para adicioná-lo a seu servidor, siga estas [instruções](https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links).
 
 PS: Talvez você tenha que mudar as permissões do bot ao adicioná-lo para que ele funcione. Preste atenção nas instruções do passo 15.
